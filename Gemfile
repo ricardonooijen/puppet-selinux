@@ -23,6 +23,7 @@ group :test do
   gem 'puppet-lint-absolute_classname-check', '>= 2.0.0',           :require => false
   gem 'puppet-lint-topscope-variable-check',                        :require => false
   gem 'puppet-lint-legacy_facts-check',                             :require => false
+  gem 'puppet-lint-anchor-check',                                   :require => false
   gem 'metadata-json-lint',                                         :require => false
   gem 'redcarpet',                                                  :require => false
   gem 'rubocop', '~> 0.49.1',                                       :require => false
@@ -31,9 +32,6 @@ group :test do
   gem 'coveralls',                                                  :require => false
   gem 'simplecov-console',                                          :require => false
   gem 'parallel_tests',                                             :require => false
-  # we require unreleased Fedora 30 fact sets
-  # https://github.com/camptocamp/facterdb/commit/1bc038fd42aac53344ac1ee9c129cbccf5b5c0aa
-  gem 'facterdb',                                                   :require => false, :git => 'https://github.com/camptocamp/facterdb.git', :branch => 'master'
 end
 
 group :development do
@@ -64,6 +62,7 @@ group :system_tests do
   gem 'rbnacl', '>= 4',                     :require => false
   gem 'rbnacl-libsodium',                   :require => false
   gem 'bcrypt_pbkdf',                       :require => false
+  gem 'ed25519',                            :require => false
   gem 'beaker-vagrant',                     :require => false
 end
 
