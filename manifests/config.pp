@@ -28,7 +28,8 @@ class selinux::config (
       # See: https://wiki.debian.org/SELinux/Setup.
       exec { 'activate-selinux':
         command  => '/usr/sbin/selinux-activate',
-        unless   => shell_join(['/usr/bin/grep', '-q', '^GRUB_CMDLINE_LINUX=.*security=selinux', '/etc/default/grub']),
+        unless   => shell_join(['grep', '-q', '^GRUB_CMDLINE_LINUX=.*security=selinux', '/etc/default/grub']),
+        path     => '/bin:/usr/bin:/usr/sbin',
         provider => 'shell',
       }
     }
